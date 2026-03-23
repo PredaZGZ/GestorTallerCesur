@@ -5,7 +5,7 @@ public class Coche {
 	private String matricula;
 	private String modelo;
 	private String descripcionFallo;
-	//test
+	
 	public Coche (String matricula, String modelo, String descripcionFallo) {
 		this.matricula = matricula;
 		this.modelo = modelo;
