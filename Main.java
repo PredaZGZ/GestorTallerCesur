@@ -1,6 +1,5 @@
 package Taller;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
 	
 	
@@ -27,14 +26,21 @@ public class Main {
 				System.out.println("Cancelar cita: ");
 				System.out.println("Modificar cita: ");		
 				
-				switch 
+				
 			}
 			
 			case 2 -> {
+				int opcionE;
 				System.out.println("Modificar empleado");
+				opcionE = sc.nextInt();
 				System.out.println("Contratar empleado: ");
+				opcionE = sc.nextInt();
 				System.out.println("Ver horario de un empleado");				
-				
+				opcionE = sc.nextInt();
+
+				switch(opcionE){
+					
+				}
 			}
 			case 3 -> {
 				//System.out.println("");
