@@ -20,21 +20,6 @@ public class Taller {
 		Coche coche = new Coche(matricula,modelo,descripcionFallo);
 			
 		listaCoches.add(coche);
-
-		//EMPLEADOS
-
-		//addEmpleados
-		// etc
-
-
-
-
-
-
-
-
-
-
 		
 
 	}
