@@ -24,6 +24,7 @@ public class Main {
 			case 1 -> {
 
 				menuCitas();
+				opcion = sc.nextInt();
 
 				switch(opcion) {
 
@@ -66,6 +67,7 @@ public class Main {
 			
 		}
 
+		sc.close();
 
 	}
 
