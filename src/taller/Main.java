@@ -22,11 +22,18 @@ public class Main {
 		switch(opcion) {
 		
 			case 1 -> {
-				//System.out.println("Listar citas de hoy");
-				System.out.println("Ver futuras citas");
-				System.out.println("Agendar cita: ");
-				System.out.println("Cancelar cita: ");
-				System.out.println("Modificar cita: "); 
+
+				menuCitas();
+
+				switch(opcion) {
+
+					case 1 -> listarCitasHoy();
+					case 2 -> listarFuturasCitas();
+					case 3 -> AgendarCitas();
+					case 4 -> CancelarCitas();
+					case 5 -> ModificarCitas();
+				}
+			
 			}
 			
 			case 2 -> {
@@ -59,5 +66,36 @@ public class Main {
 			
 		}
 
+
+	}
+
+	private static void menuCitas() {
+	
+		System.out.println("1. Listar citas de hoy");
+		System.out.println("2. Ver futuras citas");
+		System.out.println("3. Agendar cita: ");
+		System.out.println("4. Cancelar cita: ");
+		System.out.println("5. Modificar cita: ");
+
+	}
+
+	private static void listarCitasHoy() {
+	// En proceso
+	}
+
+	private static void listarFuturasCitas() {
+	// En proceso
+	}
+
+	private static void AgendarCitas() {
+	// En proceso
+	}
+
+	private static void CancelarCitas() {
+	// En proceso
+	}
+
+	private static void ModificarCitas() {
+	// En proceso
 	}
 }
