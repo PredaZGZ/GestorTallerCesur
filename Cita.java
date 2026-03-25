@@ -3,8 +3,9 @@ package GestorTallerCesur;
 public class Cita {
 	private String fecha;
 	private String hora;
-	private Cliente cliente;
+	private Cliente cliente; // cliente, coche, factura y empleado no necesitan getter ni setter en principio
 	private Coche coche;
+<<<<<<< HEAD
 	private Factura factura;
 <<<<<<< HEAD
 	private Empleado empleado; 
@@ -71,15 +72,18 @@ public class Cita {
 	
 	
 =======
+=======
+	private Factura factura; // No se, de momento, para qué necesitamos factura en citas
+>>>>>>> 3b55af3bebf8a106c5f0c73be5af08de99f190c2
 	private Empleado empleado;
 
 	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
 		setFecha(fecha);
 		setHora(hora);
-		setCliente(cliente);
-		setCoche(coche);
-		setFactura(factura);
-		setEmpleado(empleado);
+		this.cliente = cliente;
+		this.coche = coche;
+		this.factura = factura;
+		this.empleado = empleado;
 	}
 
     public String getFecha() {
@@ -98,14 +102,18 @@ public class Cita {
         this.hora = hora;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
+	@Override
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+	public String toString() {
+		return "Fecha " + fecha + " " + "\n" +
+			"Hora " + hora + " " + "\n" +
+			cliente + "\n" +
+			coche + "\n" +
+			factura + "\n" +
+			empleado;
+	}
 
+<<<<<<< HEAD
     public Coche getCoche() {
         return coche;
     }
@@ -130,4 +138,7 @@ public class Cita {
         this.empleado = empleado;
     }
 >>>>>>> 5332fde6f40dde1ae17458a6b4701d9e11116e87
+=======
+   
+>>>>>>> 3b55af3bebf8a106c5f0c73be5af08de99f190c2
 }
