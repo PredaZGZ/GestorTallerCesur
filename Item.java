@@ -14,7 +14,7 @@ public class Item {
 		return nombre;
 	}
 
-	public void setNombre(String matricula) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
