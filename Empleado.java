@@ -4,13 +4,15 @@ public class Empleado {
 	private String nombre;
 	private String puesto;
 	private double sueldo;
-	private String turno; //Falta el constructor (arreglar) 
+	private String turno;
 	private boolean estaDisponible;
 	
-	public Empleado(String nombre, String puesto, double sueldo) {
+	
+	public Empleado(String nombre, String puesto, double sueldo, String turno) {
 		setNombre(nombre);
 		setPuesto(puesto);
 		setSueldo(sueldo);
+		setTurno(turno);
 		this.estaDisponible = true;
 	}
 
@@ -40,7 +42,15 @@ public class Empleado {
 		}
 		this.sueldo = sueldo;
 	}
+	
+	public String getTurno() {
+		return turno;
+	}
 
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
+	
 	public boolean isEstaDisponible() {
 		return estaDisponible;
 	}
@@ -53,6 +63,6 @@ public class Empleado {
 	public String toString() {
 		return "Nombre: " + this.nombre + " Puesto: " + this.puesto;
 	}
-	
+
 	
 }
