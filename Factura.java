@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Factura {
 	
 	private int id;
+	private Cita cita;
+	private Cliente cliente;
+	private ArrayList<Factura> listafacturas;
+	
 	private ArrayList<Item> listaElementos;
 	
 		public Factura(int id, ArrayList<Item> listaElementos) {
@@ -32,5 +36,6 @@ public class Factura {
 		public String toString() {
 			return "Factura [id=" + id + ", listaElementos=" + listaElementos + "]";
 		}
+
 	
 }
