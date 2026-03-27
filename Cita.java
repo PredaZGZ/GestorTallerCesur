@@ -40,19 +40,19 @@ public class Cita {
 		this.hora = hora;
 	}
 	
-	public void setCliente(String cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	
-	public void setCoche(String coche) {
+	public void setCoche(Coche coche) {
 		this.coche = coche;
 	}
 	
-	public void setFactura(String factura) {
+	public void setFactura(Factura factura) {
 		this.factura = factura;
 	}
 	
-	public void setEmpleado(String empleado) {
+	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
 
