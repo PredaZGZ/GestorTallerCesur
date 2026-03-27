@@ -10,8 +10,8 @@ public class Cita {
 
 
 	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
-		setFecha(fecha);
-		setHora(hora);
+		this.fecha = fecha;
+		this.hora = hora;
 		this.cliente = cliente;
 		this.coche = coche;
 		this.factura = factura;
@@ -21,17 +21,8 @@ public class Cita {
     public String getFecha() {
         return fecha;
     }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
     public String getHora() {
         return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
     }
 
 	@Override
