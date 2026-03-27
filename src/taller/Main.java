@@ -38,11 +38,11 @@ public class Main {
 			}
 			
 			case 2 -> {
-				System.out.println("Modificar empleado");
-				System.out.println("Contratar empleado: ");
-				System.out.println("Ver horario de un empleado");				
-				
+
+				menuEmpleados();  
+
 			}
+
 			case 3 -> {
 				//System.out.println("");
 				System.out.println("Buscar: "); //Opcion de modificar despues.
@@ -79,5 +79,14 @@ public class Main {
 		System.out.println("5. Modificar cita: ");
 
 	}
+
+	private static void menuEmpleados() {
+   
+        System.out.println("Modificar empleado");
+        System.out.println("Contratar empleado: ");
+        System.out.println("Ver horario de un empleado");      
+
+
+    }
 
 }
