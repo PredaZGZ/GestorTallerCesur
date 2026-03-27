@@ -75,6 +75,36 @@ public class Taller {
 			System.err.println(e.getMessage());
 		}
 	}
+
+	// Cancelar cita
+	public void cancelarCita(Cliente cliente) { // Si os parece usaremos cliente para encontrar la cita
+		for (int i = 0; i < listaCitas.size(); i++) {
+			if (listaCitas.get(i).getCliente().equals(cliente)) {
+				listaCitas.remove(i);
+				System.out.println("Cita cancelada correctamente");
+				return;
+			}
+		}
+		System.out.println("No existe una cita para ese cliente");
+	}
+
+	// Modificar cita
+	public void modificarCita(Cliente cliente, String fecha, String hora) { // Usaré de nuevo al cliente para encontrar la cita (nos falta un método de buscar cliente)
+		for (int i = 0; i < listaCitas.size(); i++) {
+			if (listaCitas.get(i).getCliente().equals(cliente)) { // Me guardo el coche, la factura y el empleado
+				Coche coche = listaCitas.get(i).getCoche();
+				Factura factura = listaCitas.get(i).getFactura();
+				Empleado empleado = listaCitas.get(i).getEmpleado();
+				listaCitas.remove(i); //Elimino la cita
+				Cita cita = new Cita(fecha, hora, cliente, coche, factura, empleado); // creo una cita nueva con los datos guardados y con la nueva fecha y hora
+				listaCitas.add(cita); // añado la nueva cita a la lista
+				
+				return;
+			}
+		}
+		System.out.println("No existe una cita para ese cliente");
+	}
+
 		//añadir clientes
 	public void addCliente(String nombre, String apellido, String dni) {
 		for (Cliente c : listaClientes) {

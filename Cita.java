@@ -24,7 +24,22 @@ public class Cita {
     public String getHora() {
         return hora;
     }
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	public Coche getCoche() {
+		return coche;
+	}
 
+	public Factura getFactura() {
+		return factura;
+	}
+
+	public Empleado getEmpleado() {
+		return empleado;
+	}
 	@Override
 
 	public String toString() {
@@ -35,5 +50,6 @@ public class Cita {
 			factura + "\n" +
 			empleado;
 	}
+
 
 }
