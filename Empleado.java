@@ -4,13 +4,16 @@ public class Empleado {
 	private String nombre;
 	private String puesto;
 	private double sueldo;
-	private String turno; //Falta el contructor (arreglar) 
+	private String turno;
+	private String dni;
 	private boolean estaDisponible;
 	
-	public Empleado(String nombre, String puesto, double sueldo) {
+	public Empleado(String nombre, String puesto, double sueldo, String turno,String dni) {
 		this.nombre = nombre;
 		this.puesto = puesto;
 		this.sueldo = sueldo;
+		this.turno = turno;
+		this.dni = dni;
 		this.estaDisponible = true;
 	}
 
