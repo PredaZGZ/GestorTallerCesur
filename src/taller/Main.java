@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	
+	private static Taller miTaller = new Taller();
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,42 +23,90 @@ public class Main {
 		switch(opcion) {
 		
 			case 1 -> {
-				//System.out.println("Listar citas de hoy");
-				System.out.println("Ver futuras citas");
-				System.out.println("Agendar cita: ");
-				System.out.println("Cancelar cita: ");
-				System.out.println("Modificar cita: "); 
+
+				menuCitas();
+
+				switch(opcion) {
+
+					case 1 -> Taller.listarCitasHoy();
+					case 2 -> Taller.listarFuturasCitas();
+					case 3 -> Taller.AgendarCitas();
+					case 4 -> Taller.CancelarCitas();
+					case 5 -> Taller.ModificarCitas();
+				}
+			
 			}
 			
 			case 2 -> {
-				System.out.println("Modificar empleado");
-				System.out.println("Contratar empleado: ");
-				System.out.println("Ver horario de un empleado");				
-				
+
+				menuEmpleados();  
+
 			}
+
 			case 3 -> {
-				//System.out.println("");
-				System.out.println("Buscar: "); //Opcion de modificar despues.
-				System.out.println("Añadir cliente: ");
+				
+				menuClientes();
 				
 			}
+
 			case 4 -> {
-				//System.out.println("");
-				System.out.println("Buscar: "); 
-				System.out.println("Añadir Vehiculo: ");
 				
-			}
-			case 5 -> {
-				//System.out.println("");
-				System.out.println("Buscar por Cliente :");
-				System.out.println("Buscar por ID factura: ");
-				System.out.println("Buscar por matricula: ");
-				System.out.println("Buscar por empleado:  ");
-				System.out.println("Buscar por partes:  ");
+				menuVehiculos();
+				
 			}
 			
+			case 5 -> {
+
+				menuFacturas();
+
+			}
 			
 		}
 
 	}
+
+	private static void menuCitas() {
+	
+		System.out.println("1. Listar citas de hoy");
+		System.out.println("2. Ver futuras citas");
+		System.out.println("3. Agendar cita: ");
+		System.out.println("4. Cancelar cita: ");
+		System.out.println("5. Modificar cita: ");
+
+	}
+
+	private static void menuEmpleados() {
+   
+        System.out.println("Modificar empleado");
+        System.out.println("Contratar empleado: ");
+        System.out.println("Ver horario de un empleado");      
+
+    }
+
+	private static void menuClientes() {
+   
+        System.out.println("Buscar cliente: ");
+        System.out.println("Añadir cliente: ");
+        System.out.println("Modificar información del cliente: ");      
+
+    }
+
+	private static void menuVehiculos() {
+   
+        System.out.println("Buscar vehiculo: ");
+        System.out.println("Añadir Vehiculo: ");
+        System.out.println("Modificar información del Vehiculo: ");
+
+    }
+
+	private static void menuFacturas() {
+   
+        System.out.println("Buscar por Cliente :");
+        System.out.println("Buscar por ID factura: ");
+        System.out.println("Buscar por matricula: ");
+        System.out.println("Buscar por empleado:  ");
+        System.out.println("Buscar por partes:  ");
+
+    }
+
 }
