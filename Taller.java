@@ -19,12 +19,6 @@ public class Taller {
 		Coche coche = new Coche(matricula,modelo,descripcionFallo);			
 		listaCoches.add(coche);		
 	}
-<<<<<<< HEAD
-		//añadir empleados
-	public void addEmpleado(String nombre, String puesto, double sueldo) {
-		Empleado empleado = new Empleado(nombre, puesto, sueldo);
-		listaEmpleados.add(empleado);
-=======
 	//añadir empleados
 	public void addEmpleado(String dni, String nombre, String puesto, double sueldo, String turno) {
 		/*
@@ -36,11 +30,7 @@ public class Taller {
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
->>>>>>> da808d953aa5b6d15e944026cf25c9b8ca28889e
 	}
-<<<<<<< HEAD
-		//añadir facturas
-=======
 
 	//buscar empleado
 	public Empleado buscarEmpleadoDni(String dni) {
@@ -57,7 +47,6 @@ public class Taller {
 	}
 
 	//añadir facturas
->>>>>>> e42a2e9b8abdc0159ee8bc4db62ed159b164cc93
 	public void addFactura(int id, ArrayList<Item> listaElementos) {
 		Factura factura = new Factura(id, listaElementos);
 		listaFacturas.add(factura);

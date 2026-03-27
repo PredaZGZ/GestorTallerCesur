@@ -1,11 +1,6 @@
 package GestorTallerCesur;
 
 public class Pieza extends Item {
-<<<<<<< HEAD
-
-	public Pieza() {
-	
-=======
 	
 	private String nombrePieza;
 	private String marca;
@@ -15,7 +10,6 @@ public class Pieza extends Item {
 		super(nombre, precioBase);
 		this.nombrePieza = nombrePieza;
 		this.marca = marca;
->>>>>>> f70b8aac133a239e7392cc603e6b9b015151f8d6
 	}
 
 

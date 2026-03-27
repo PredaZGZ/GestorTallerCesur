@@ -5,77 +5,9 @@ public class Cita {
 	private String hora;
 	private Cliente cliente; // cliente, coche, factura y empleado no necesitan getter ni setter en principio
 	private Coche coche;
-<<<<<<< HEAD
 	private Factura factura;
-<<<<<<< HEAD
-	private Empleado empleado; 
-	
-		public Cita(String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
-			super();
-			this.fecha = fecha;
-			this.hora = hora;
-			this.cliente = cliente;
-			this.coche = coche;
-			this.factura = factura;
-			this.empleado = empleado;
-		}
-
-		public String getFecha() {
-			return fecha;
-		}
-
-		public String getHora() {
-			return hora;
-		}
-
-		public void setHora(String hora) {
-			this.hora = hora;
-		}
-
-		public Cliente getCliente() {
-			return cliente;
-		}
-
-		public void setCliente(Cliente cliente) {
-			this.cliente = cliente;
-		}
-
-		public Coche getCoche() {
-			return coche;
-		}
-
-		public void setCoche(Coche coche) {
-			this.coche = coche;
-		}
-
-		public Factura getFactura() {
-			return factura;
-		}
-
-		public void setFactura(Factura factura) {
-			this.factura = factura;
-		}
-
-		public Empleado getEmpleado() {
-			return empleado;
-		}
-
-		public void setEmpleado(Empleado empleado) {
-			this.empleado = empleado;
-		}
-
-		@Override
-		public String toString() {
-			return "Cita [fecha=" + fecha + ", hora=" + hora + ", cliente=" + cliente + ", coche=" + coche
-					+ ", factura=" + factura + ", empleado=" + empleado + "]";
-		}
-	
-	
-=======
-=======
-	private Factura factura; // No se, de momento, para qué necesitamos factura en citas
->>>>>>> 3b55af3bebf8a106c5f0c73be5af08de99f190c2
 	private Empleado empleado;
+
 
 	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
 		setFecha(fecha);
@@ -113,32 +45,4 @@ public class Cita {
 			empleado;
 	}
 
-<<<<<<< HEAD
-    public Coche getCoche() {
-        return coche;
-    }
-
-    public void setCoche(Coche coche) {
-        this.coche = coche;
-    }
-
-    public Factura getFactura() {
-        return factura;
-    }
-
-    public void setFactura(Factura factura) {
-        this.factura = factura;
-    }
-
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
->>>>>>> 5332fde6f40dde1ae17458a6b4701d9e11116e87
-=======
-   
->>>>>>> 3b55af3bebf8a106c5f0c73be5af08de99f190c2
 }
