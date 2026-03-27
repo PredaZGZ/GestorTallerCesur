@@ -32,6 +32,16 @@ public class Taller {
 		}
 	}
 
+	//Eliminar / despedir empleados
+	public void eliminarEmpleado (String dni) { // poner empleado en "no disponible"
+		Empleado empleado = buscarEmpleadoDni(dni);
+		if (empleado == null) {
+			return;
+		}
+		empleado.cambiarEstado();
+		System.out.println("Empleado eliminado");
+	}
+
 	//buscar empleado
 	public Empleado buscarEmpleadoDni(String dni) {
 		if (listaEmpleados.isEmpty()) {
@@ -51,7 +61,8 @@ public class Taller {
 		Factura factura = new Factura(id, listaElementos);
 		listaFacturas.add(factura);
 	}
-		//añadir citas
+	
+	//añadir citas
 	public void addCita(String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
 		/*
 			Este try-catch prueba a crear la nueva cita. En caso de un dato incorrecto, desde la clase Cita se lanza el error
