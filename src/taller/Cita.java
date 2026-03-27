@@ -55,5 +55,14 @@ public class Cita {
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
+	
+	public Cita(String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
+		this.fecha = fecha;
+		this.hora = hora;
+		this.cliente = cliente;
+		this.coche = coche;
+		this.factura = factura;
+		this.empleado = empleado;
+	}
 
 }
