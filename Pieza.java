@@ -1,4 +1,3 @@
-package Taller;
 
 public class Pieza extends Item {
 

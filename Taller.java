@@ -1,6 +1,4 @@
-package Taller;
 import java.util.ArrayList;
-
 public class Taller {
 	
 	ArrayList<Coche> listaCoches = new ArrayList<>();
