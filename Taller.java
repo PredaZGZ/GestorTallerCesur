@@ -5,12 +5,16 @@
 import java.util.ArrayList;
 public class Taller {
 	
-	ArrayList<Coche> listaCoches = new ArrayList<>();
+	//------------------------- EMPLEADOS -------------------------------------
 	ArrayList<Empleado> listaEmpleados = new ArrayList<>();
-	ArrayList<Factura> listaFacturas = new ArrayList<>();
-	ArrayList<Cita> listaCitas = new ArrayList<>();
-	ArrayList<Cliente> listaClientes = new ArrayList<>();
 
+
+
+	//------------------------------------------------------------------------
+
+
+	//-------------------------- COCHES -------------------------------------
+	ArrayList<Coche> listaCoches = new ArrayList<>();
 	
 	public void addCoche(String matricula, String modelo, String descripcionFallo) {
 		for (Coche c : listaCoches) {
@@ -22,6 +26,33 @@ public class Taller {
 		public Coche coche = new Coche(matricula,modelo,descripcionFallo);
 			
 		listaCoches.add(coche);
+	//------------------------------------------------------------------------
+
+
+	//-------------------------- FACTURAS ----------------------------------------
+	ArrayList<Factura> listaFacturas = new ArrayList<>();
+
+
+
+	//------------------------------------------------------------------------
+
+
+	//-------------------------- CITAS ----------------------------------------
+	ArrayList<Cita> listaCitas = new ArrayList<>();
+
+
+
+	//------------------------------------------------------------------------
+
+
+	//-------------------------- CLIENTES ----------------------------------------
+	ArrayList<Cliente> listaClientes = new ArrayList<>();
+
+
+	
+	//------------------------------------------------------------------------
+
+
 		
 
 	}
