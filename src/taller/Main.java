@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	
+	private static Taller miTaller = new Taller();
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,7 +25,6 @@ public class Main {
 			case 1 -> {
 
 				menuCitas();
-				opcion = sc.nextInt();
 
 				switch(opcion) {
 
@@ -67,7 +67,6 @@ public class Main {
 			
 		}
 
-		sc.close();
 
 	}
 
