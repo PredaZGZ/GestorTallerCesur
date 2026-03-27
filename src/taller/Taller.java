@@ -25,4 +25,24 @@ public class Taller {
 
 	}
 	
+	private static void listarCitasHoy() {
+	// En proceso
+	}
+
+	private static void listarFuturasCitas() {
+	// En proceso
+	}
+
+	private static void AgendarCitas() {
+	// En proceso
+	}
+
+	private static void CancelarCitas() {
+	// En proceso
+	}
+
+	private static void ModificarCitas() {
+	// En proceso
+	}
+	
 }

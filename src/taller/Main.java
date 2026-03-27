@@ -28,11 +28,11 @@ public class Main {
 
 				switch(opcion) {
 
-					case 1 -> listarCitasHoy();
-					case 2 -> listarFuturasCitas();
-					case 3 -> AgendarCitas();
-					case 4 -> CancelarCitas();
-					case 5 -> ModificarCitas();
+					case 1 -> Taller.listarCitasHoy();
+					case 2 -> Taller.listarFuturasCitas();
+					case 3 -> Taller.AgendarCitas();
+					case 4 -> Taller.CancelarCitas();
+					case 5 -> Taller.ModificarCitas();
 				}
 			
 			}
@@ -80,23 +80,4 @@ public class Main {
 
 	}
 
-	private static void listarCitasHoy() {
-	// En proceso
-	}
-
-	private static void listarFuturasCitas() {
-	// En proceso
-	}
-
-	private static void AgendarCitas() {
-	// En proceso
-	}
-
-	private static void CancelarCitas() {
-	// En proceso
-	}
-
-	private static void ModificarCitas() {
-	// En proceso
-	}
 }
