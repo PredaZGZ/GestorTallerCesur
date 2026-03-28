@@ -85,13 +85,59 @@ public class Main {
 				}
 				
 				case 2 -> {
-					System.out.println("1. Modificar empleado");
-					System.out.println("2. Contratar empleado: ");
+					System.out.println("1. Contratar empleado: ");
+					System.out.println("2. Modificar empleado");
 					System.out.println("3. Ver horario de un empleado");				
 					int opcion2 = sc.nextInt();
 					sc.nextLine();
 					
-					switch(opcion2) {}
+					switch(opcion2) {
+						case 1 -> {
+							System.out.println("Introduce el DNI:");
+							String dni = sc.nextLine();
+							System.out.println("Introduce el nombre");
+							String nombre = sc.nextLine();
+							System.out.println("Introduce el puesto");
+							String puesto = sc.nextLine();
+							System.out.println("Introduce el sueldo");
+							Double sueldo = sc.nextDouble();
+							sc.nextLine();
+							System.out.println("Introduce el turno");
+							String turno = sc.nextLine();
+							try {
+								taller.addEmpleado(dni, nombre, puesto, sueldo, turno);
+							} catch (Exception e) {
+								System.err.println(e.getMessage());
+							}
+						}
+
+						case 2 -> {
+							System.out.println("Introduce el DNI del empleado:");
+							String dniEmpleado = sc.nextLine();
+							Empleado empleado = taller.buscarEmpleadoDni(dniEmpleado);
+							if (empleado == null) break;
+							int accion = 0;
+							do { 
+								System.out.println("¿Qué deseas modificar?");
+								System.out.println("1. Sueldo");
+								System.out.println("2. Puesto");
+								System.out.println("3. turno");
+								System.out.println("4. Terminar y salir");
+								accion = sc.nextInt();
+								sc.nextLine();
+
+								switch(accion) {
+									case 1 -> { // No es definitiva esta forma de hacerlo
+										System.out.println("Introdice el sueldo:");
+										Double sueldo = sc.nextDouble();
+										sc.nextLine();
+										empleado.setSueldo(sueldo);
+									}
+								}
+							} while (accion != 4);
+						}
+
+					}
 				}
 				case 3 -> {
 					//System.out.println("");
