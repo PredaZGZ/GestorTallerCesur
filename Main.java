@@ -1,64 +1,135 @@
-package Taller;
+package GestorTallerCesur;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
+	public int leerNumero(int numero) {
+		Scanner sc = new Scanner(System.in);
+		
+		return 5;
+	}
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	
+		Taller taller = new Taller();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Selecciona una opcion:");
-		//System.out.println("Create, Read, Update, Delete");
-		System.out.println("1. Citas: ");
-		System.out.println("2. Empleados: ");
-		System.out.println("3. Clientes: ");
-		System.out.println("4. Vehiculos: ");
-		System.out.println("5. Facturas: ");
-		System.out.println("6. Guardar y salir: ");
-		int opcion = sc.nextInt();
-	
-		switch(opcion) {
+		int opcion = 0;
+		do { 
+			
+			System.out.println("Selecciona una opcion:");
+			//System.out.println("Create, Read, Update, Delete");
+			System.out.println("1. Citas: ");
+			System.out.println("2. Empleados: ");
+			System.out.println("3. Clientes: ");
+			System.out.println("4. Vehiculos: ");
+			System.out.println("5. Facturas: ");
+			System.out.println("6. Guardar y salir: ");
+			opcion = sc.nextInt();
+			sc.nextLine(); // IMPORTANTE: limpiar el bufer después de hacer algún sc.nextInt()
 		
-			case 1 -> {
-				//System.out.println("Listar citas de hoy");
-				System.out.println("Ver futuras citas");
-				System.out.println("Agendar cita: ");
-				System.out.println("Cancelar cita: ");
-				System.out.println("Modificar cita: ");		
-				
-				switch 
-			}
+			switch(opcion) {
 			
-			case 2 -> {
-				System.out.println("Modificar empleado");
-				System.out.println("Contratar empleado: ");
-				System.out.println("Ver horario de un empleado");				
+				case 1 -> {
+					//System.out.println("Listar citas de hoy");
+					System.out.println("1. Ver futuras citas");
+					System.out.println("2. Agendar cita: ");
+					System.out.println("3. Cancelar cita: ");
+					System.out.println("4. Modificar cita: ");		
+					int opcion2 = sc.nextInt();
+					sc.nextLine();
+					
+					switch(opcion2) {
+						case 1 -> {
+							
+						}
+	
+						case 2 -> {
+							System.out.println("Introduce la fecha (00/00/000)");
+							String fecha = sc.nextLine();
+							System.out.println("Introduce la hora:");
+							String hora = sc.nextLine();
+							System.out.println("DNI del cliente: ");
+							String dniCliente = sc.nextLine();
+							Cliente cliente = taller.buscarCliente(dniCliente);
+							if (cliente == null) break;
+							System.out.println("Matrícula del coche");
+							String matricula = sc.nextLine();
+							Coche coche = taller.buscarCoche(matricula);
+							if (coche == null) break;
+							System.out.println("DNI del empleado que atenderá al cliente");
+							String dniEmpleado = sc.nextLine();
+							Empleado empleado = taller.buscarEmpleadoDni(dniEmpleado);
+							if (empleado == null) break;
+							taller.addCita(fecha, hora, cliente, coche, empleado);
+						}
+	
+						case 3 -> {
+							System.out.println("DNI del cliente: ");
+							String dniCliente = sc.nextLine();
+							Cliente cliente = taller.buscarCliente(dniCliente);
+							if (cliente != null) {
+								taller.cancelarCita(cliente);
+							}
+						}
+
+						case 4 -> {
+							System.err.println("DNI del cliente: ");
+							String dniCliente = sc.nextLine();
+							Cliente cliente = taller.buscarCliente(dniCliente);
+							if (cliente == null) break;
+							System.out.println("Nueva fecha de la cita: ");
+							String fecha = sc.nextLine();
+							System.out.println("Nueva hora de la cita:");
+							String hora = sc.nextLine();
+							taller.modificarCita(cliente, fecha, hora);
+						}
+					}
+				}
+				
+				case 2 -> {
+					System.out.println("1. Modificar empleado");
+					System.out.println("2. Contratar empleado: ");
+					System.out.println("3. Ver horario de un empleado");				
+					int opcion2 = sc.nextInt();
+					sc.nextLine();
+					
+					switch(opcion2) {}
+				}
+				case 3 -> {
+					//System.out.println("");
+					System.out.println("1. Buscar: "); //Opcion de modificar despues.
+					System.out.println("2. Añadir cliente: ");
+					int opcion2 = sc.nextInt();
+					sc.nextLine();
+					
+					switch(opcion2) {}
+				}
+				case 4 -> {
+					//System.out.println("");
+					System.out.println("1. Buscar: "); 
+					System.out.println("2. Añadir Vehiculo: ");
+					int opcion2 = sc.nextInt();
+					sc.nextLine();
+					
+					switch(opcion2) {}
+				}
+				case 5 -> {
+					//System.out.println("");
+					System.out.println("1. Buscar por Cliente :");
+					System.out.println("2. Buscar por ID factura: ");
+					System.out.println("3. Buscar por matricula: ");
+					System.out.println("4. Buscar por empleado:  ");
+					System.out.println("5. Buscar por partes:  ");
+					int opcion2 = sc.nextInt();
+					sc.nextLine();
+					
+					switch(opcion2) {}
+				}
+				
 				
 			}
-			case 3 -> {
-				//System.out.println("");
-				System.out.println("Buscar: "); //Opcion de modificar despues.
-				System.out.println("Añadir cliente: ");
-				
-			}
-			case 4 -> {
-				//System.out.println("");
-				System.out.println("Buscar: "); 
-				System.out.println("Añadir Vehiculo: ");
-				
-			}
-			case 5 -> {
-				//System.out.println("");
-				System.out.println("Buscar por Cliente :");
-				System.out.println("Buscar por ID factura: ");
-				System.out.println("Buscar por matricula: ");
-				System.out.println("Buscar por empleado:  ");
-				System.out.println("Buscar por partes:  ");
-			}
-			
-			
-		}
+		} while (opcion != 6);
 
 	}
 }
+
+
+	
