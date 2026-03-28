@@ -78,16 +78,9 @@ public class Taller {
 	
 	//añadir citas
 	public void addCita(String fecha, String hora, Cliente cliente, Coche coche, Empleado empleado) {
-		/*
-			Este try-catch prueba a crear la nueva cita. En caso de un dato incorrecto, desde la clase Cita se lanza el error
-		*/
-		try {
-			Cita cita = new Cita(fecha, hora, cliente, coche, empleado);
-			listaCitas.add(cita);
-			System.out.println("Cita añadida cporrectamente");
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
+		Cita cita = new Cita(fecha, hora, cliente, coche, empleado);
+		listaCitas.add(cita);
+		System.out.println("Cita añadida cporrectamente");
 	}
 
 	// Cancelar cita
