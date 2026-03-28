@@ -3,7 +3,7 @@ package GestorTallerCesur;
 public class Cita {
 	private String fecha;
 	private String hora;
-	private Cliente cliente; // cliente, coche, factura y empleado no necesitan getter ni setter en principio
+	private Cliente cliente;
 	private Coche coche;
 	private Factura factura;
 	private Empleado empleado;
@@ -47,7 +47,6 @@ public class Cita {
 			"Hora " + hora + " " + "\n" +
 			cliente + "\n" +
 			coche + "\n" +
-			factura + "\n" +
 			empleado;
 	}
 
