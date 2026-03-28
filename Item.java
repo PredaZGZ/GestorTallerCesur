@@ -12,6 +12,11 @@ public class Item {
 		this.precioBase = precioBase;
 	}
 
+	// devuelve el precio base para los demas objetos
+	@Override
+	public double calcularPrecioFinal () {
+		return precioBase;
+	}
 	public String getNombre() {
 		return nombre;
 	}
