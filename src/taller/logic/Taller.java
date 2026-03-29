@@ -4,12 +4,6 @@ import java.util.ArrayList;
 
 public class Taller {
 	
-	ArrayList<Coche> listaCoches = new ArrayList<>();
-	ArrayList<Empleado> listaEmpleados = new ArrayList<>();
-	ArrayList<Factura> listaFacturas = new ArrayList<>();
-	ArrayList<Cliente> listaClientes = new ArrayList<>();
-
-	
 	public void addCoche(String matricula, String modelo, String descripcionFallo) {
 		for (Coche c : listaCoches) {
 			if (matricula.equals(c.getMatricula())) {

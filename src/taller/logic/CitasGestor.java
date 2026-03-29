@@ -2,6 +2,8 @@ package taller.logic;
 
 import java.util.ArrayList;
 
+import taller.Cita;
+
 public class CitasGestor {
 
     ArrayList<Cita> listaCitas = new ArrayList<>();
