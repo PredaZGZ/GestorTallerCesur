@@ -2,7 +2,7 @@ package taller.logic;
 
 import java.util.ArrayList;
 
-import taller.Cliente;
+import taller.models.Cliente;
 
 public class ClienteGestor {
 

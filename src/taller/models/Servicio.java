@@ -1,4 +1,4 @@
-package taller;
+package taller.models;
 
 public class Servicio extends Item {
 
