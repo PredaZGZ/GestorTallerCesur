@@ -2,6 +2,11 @@ package taller;
 
 import java.util.Scanner;
 
+import taller.logic.CitasGestor;
+import taller.logic.ClienteGestor;
+import taller.logic.CocheGestor;
+import taller.logic.EmpleadoGestor;
+import taller.logic.FacturasGestor;
 import taller.logic.Taller;
 
 public class Main {
