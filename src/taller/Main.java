@@ -7,11 +7,9 @@ import taller.logic.ClienteGestor;
 import taller.logic.CocheGestor;
 import taller.logic.EmpleadoGestor;
 import taller.logic.FacturasGestor;
-import taller.logic.Taller;
 
 public class Main {
 	
-	private static Taller miTaller = new Taller();
 	private static CitasGestor gestorCitas = new CitasGestor();
 	
 	public static void main(String[] args) {
