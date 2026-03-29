@@ -1,5 +1,7 @@
 package taller;
 
+import taller.models.Item;
+
 public class Pieza extends Item {
 	private String nombre;
 	private String marca;
