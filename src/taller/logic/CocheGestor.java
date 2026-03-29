@@ -2,7 +2,7 @@ package taller.logic;
 
 import java.util.ArrayList;
 
-import taller.Coche;
+import taller.models.Coche;
 
 public class CocheGestor {
 

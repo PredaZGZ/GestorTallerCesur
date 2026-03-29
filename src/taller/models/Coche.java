@@ -1,6 +1,4 @@
-package taller;
-
-import taller.models.Cliente;
+package taller.models;
 
 public class Coche {
 	private Cliente cliente;
