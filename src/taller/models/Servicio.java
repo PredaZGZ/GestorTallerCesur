@@ -1,6 +1,4 @@
-package taller;
-
-import taller.models.Item;
+package taller.models;
 
 public class Servicio extends Item {
 
