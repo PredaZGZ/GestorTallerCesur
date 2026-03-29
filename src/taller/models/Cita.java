@@ -1,6 +1,5 @@
 package taller.models;
 
-import taller.Cliente;
 import taller.Coche;
 import taller.Empleado;
 import taller.Factura;
