@@ -124,18 +124,23 @@ public class Main {
     }
 
 	private static void addCliente() {
+		try {
 
-		System.out.print("Introduce DNI: ");
-        String dni = sc.nextLine();
+			System.out.print("Introduce DNI: ");
+			String dni = sc.nextLine();
 
-        System.out.print("Introduce Nombre: ");
-        String nombre = sc.nextLine();
+			System.out.print("Introduce Nombre: ");
+			String nombre = sc.nextLine();
 
-        System.out.print("Introduce Apellido: ");
-        String apellido = sc.nextLine();
+			System.out.print("Introduce Apellido: ");
+			String apellido = sc.nextLine();
 
-        clienteGestor.altaCliente(dni, nombre, apellido);
+			clienteGestor.altaCliente(dni, nombre, apellido);
+			System.out.println("Cliente dado de alta correctamente.");
 
+		} catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     private static void buscarCliente() {
