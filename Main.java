@@ -53,9 +53,9 @@ public class Main {
 
 				switch(opcion) {
 
-					case 1 -> ClienteGestor.buscarCliente();
-					case 2 -> ClienteGestor.addCliente();
-					case 3 -> ClienteGestor.modCliente();
+					case 1 -> buscarCliente();
+                    case 2 -> addCliente();
+                    case 3 -> modCliente();
 					
 				}
 				
@@ -119,6 +119,18 @@ public class Main {
         System.out.println("Buscar por empleado:  ");
         System.out.println("Buscar por partes:  ");
 
+    }
+
+	private static void addCliente() {
+
+    }
+
+    private static void buscarCliente() {
+
+    }
+
+    private static void modCliente() {
+       
     }
 
 }
