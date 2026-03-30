@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class ClienteGestor {
 
-    ArrayList<Cliente> listaClientes = new ArrayList<>();
+    private ArrayList<Cliente> listaClientes;
+
+    public ClienteGestor() {
+        this.listaClientes = new ArrayList<>();
+    }
 
 }
