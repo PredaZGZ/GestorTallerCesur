@@ -1,4 +1,4 @@
-package taller.models;
+package taller;
 
 public class Pieza extends Item {
 	private String nombre;

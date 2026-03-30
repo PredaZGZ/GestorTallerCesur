@@ -1,8 +1,6 @@
-package taller.logic;
+package taller;
 
 import java.util.ArrayList;
-
-import taller.models.Cliente;
 
 public class ClienteGestor {
 

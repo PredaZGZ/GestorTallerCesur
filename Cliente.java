@@ -1,4 +1,4 @@
-package taller.models;
+package taller;
 
 public class Cliente {
 	private String nombre;

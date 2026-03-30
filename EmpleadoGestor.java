@@ -1,8 +1,6 @@
-package taller.logic;
+package taller;
 
 import java.util.ArrayList;
-
-import taller.models.Empleado;
 
 public class EmpleadoGestor {
 

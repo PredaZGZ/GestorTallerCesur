@@ -1,4 +1,4 @@
-package taller.models;
+package taller;
 
 import java.util.ArrayList;
 

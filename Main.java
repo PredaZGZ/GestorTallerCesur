@@ -2,12 +2,6 @@ package taller;
 
 import java.util.Scanner;
 
-import taller.logic.CitasGestor;
-import taller.logic.ClienteGestor;
-import taller.logic.CocheGestor;
-import taller.logic.EmpleadoGestor;
-import taller.logic.FacturasGestor;
-
 public class Main {
 	
 	private static CitasGestor gestorCitas = new CitasGestor();
