@@ -4,11 +4,12 @@ public class Main {
 	
 	private static CitasGestor gestorCitas = new CitasGestor();
 	private static ClienteGestor clienteGestor = new ClienteGestor();
+
+	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Selecciona una opcion:");
 		//System.out.println("Create, Read, Update, Delete");
 		System.out.println("1. Citas: ");
