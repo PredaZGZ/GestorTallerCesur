@@ -1,5 +1,6 @@
 package GestorTallerCesur;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class Factura {
@@ -25,6 +26,33 @@ public class Factura {
 				total += r.calcularPrecioFinal();
 			}
 			return total;
+		}
+
+		public void crearDirectorioFacturas (){
+			LocalDate fecha = LocalDate.now();
+			String mesNombre = fecha.getMonth().toString().toUpperCase();
+
+			switch (mesNombre) {
+				case "JANUARY": mesNombre = "ENERO"; break;
+				case "FEBRUARY": mesNombre = "FEBRERO"; break;
+				case "MARCH": mesNombre = "MARZO"; break;
+				case "APRIL": mesNombre = "ABRIL"; break;
+				case "MAY": mesNombre = "MAYO"; break;
+				case "JUNE": mesNombre = "JUNIO"; break;
+				case "JULY": mesNombre = "JULIO"; break;
+				case "AUGUST": mesNombre = "AGOSTO"; break;
+				case "SEPTEMBER": mesNombre = "SEPTIEMBRE";break;
+				case "OCTOBER": mesNombre = "OCTUBRE"; break;
+				case "NOVEMBER": mesNombre = "NOVIEMBRE"; break;
+				case "DECEMBER": mesNombre = "DICIEMBRE"; break;	
+				default: mesNombre = "Desconocido"; break;
+			}
+			File listaFacturas = new File ("facturas mes " + mesNombre);
+
+			if(listaFacturas.mkdir()) {
+				System.out.println("se creo directorio facturas del mes: " + mesNombre );
+			}
+
 		}
 		//genera una factura temporal en la terminal, mientras creo la persistencia para que la guarde en un archivo
 		public void generarFctura() {
