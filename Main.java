@@ -227,8 +227,71 @@ public class Main {
 					int opcion2 = sc.nextInt();
 					sc.nextLine();
 					
-					switch(opcion2) {}
+					switch(opcion2) {
+						case 1 -> {
+							System.out.println("Introduce la matricula del coche: ");
+							String matricula = sc.nextLine();
+							sc.nextLine();
+							Coche coche = taller.buscarCoche(matricula);
+							int decision = 0;
+							do {
+								System.out.println("¿Quieres modificar algo del coche? ");
+								System.out.println("1. Si");
+								System.out.println("2. No");
+								decision = sc.nextInt();
+
+								switch(decision){
+
+									case 1 -> {
+										System.out.println("¿Qué deseas modificar?");
+										System.out.println("1. Matricula");
+										System.out.println("2. Modelo");
+										System.out.println("3. Descripcion del fallo");
+										int cambio = sc.nextInt();
+
+										switch(cambio) {
+
+											case 1 -> {
+												System.out.println("Escribe la nueva matricula: ");
+												String matriculaCambio = sc.next();
+												coche.setMatricula(matriculaCambio);
+											}
+
+											case 2 -> {
+												System.out.println("Escribe el nuevo modelo: ");
+												String modelo = sc.next();
+												coche.setModelo(modelo);
+											}
+
+											case 3 -> {
+												System.out.println("Escribe la nueva descripcion del fallo: ");
+												String falloNuevo = sc.nextLine();
+												coche.setDescripcionFallo(falloNuevo);
+											}
+										}
+									}
+								
+								}
+							} while(decision != 2);	
+						}
+
+						case 2 -> {
+							System.out.println("¿A que dni está este coche?: ");
+							String dni = sc.next();
+							Cliente cliente = taller.buscarCliente(dni);
+							System.out.println("Introduce la matricula: ");
+							String matricula = sc.next();
+							System.out.println("Introduce el modelo: ");
+							String modelo = sc.next();
+							System.out.println("Describe el fallo del coche: ");
+							String fallo = sc.nextLine();
+							sc.nextLine();
+
+							taller.addCoche(cliente, matricula, modelo, fallo);
+						}
+					}
 				}
+
 				case 5 -> {
 					//System.out.println("");
 					System.out.println("1. Buscar por Cliente :");
