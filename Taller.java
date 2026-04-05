@@ -49,6 +49,8 @@ public class Taller {
 	//añadir facturas
 	public void addFactura(int id, ArrayList<Item> listaElementos) {
 		Factura factura = new Factura(id, listaElementos);
+		factura.crearDirectorioFacturas(); //metodo de crear un directorio que esta en facturas
+		factura.generarFactura(); //motodo de generar una factura y guardarla en el directiro que esdta en factura 
 		listaFacturas.add(factura);
 	}
 		//añadir citas

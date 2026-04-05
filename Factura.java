@@ -15,8 +15,9 @@ public class Factura {
 	
 	private ArrayList<Item> listaElementos;
 	
-		public Factura(int id, ArrayList<Item> listaElementos) {
+		public Factura(int id, Cliente cliente , ArrayList<Item> listaElementos) {
 			this.id = id;
+			this.cliente = cliente;
 			this.listaElementos = listaElementos;
 			this.fecha = LocalDate.now();
 		}
@@ -68,6 +69,7 @@ public class Factura {
 			try(FileWriter f = new FileWriter (ruta)) {
 				f.write("---factura taller---"+ "\n");
 				f.write("ID de la factura: "+ this.id+ "\n");
+				f.write("Cliente: " + this.cliente.getNombre() + "\n");
 				f.write("Fecha: " + this.fecha + "\n");
 			for (Item r : listaElementos) {
 				double precioItem = r.calcularPrecioFinal();
