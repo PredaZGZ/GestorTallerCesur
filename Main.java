@@ -1,4 +1,6 @@
 package GestorTallerCesur;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
 	public int leerNumero(int numero) {
@@ -158,45 +160,56 @@ public class Main {
 					switch(opcion2) {}
 				}
 				case 5 -> {
-					//System.out.println("");
-					System.out.println("1. Buscar por Cliente :");
-					System.out.println("2. Buscar por ID factura: ");
-					System.out.println("3. Buscar por matricula: ");
-					System.out.println("4. Buscar por empleado:  ");
-					System.out.println("5. Buscar por partes:  ");
-					int opcion2 = sc.nextInt();
+					System.out.println("Sistema de facturacion");
+					System.out.println("1. Generar una nueva factura");
+					System.out.println("2. Buscar una factura");
+					int subOpcion = sc.nextInt();
 					sc.nextLine();
+					switch (subOpcion) {
+						case 1 :
+							System.out.println("Ingrese el id ");
+							int id = sc.nextInt();
+							System.out.println("Ingrese el nombre del cliente");
+							String cliente = sc.nextLine();
+							System.out.println("Ingrese el id de la cita");
+							int cita = sc.nextInt();
+
+							Cita citaObtenida = taller.buscarCita(cita);
+							if (citaObtenida != null) {
+								ArrayList<Item> listaElementos = citaObtenida.getListaElementos();
+
+								Cliente clienteReal  = taller.buscarCliente(dniCliente);
+								
+								taller.addFactura(id, cliente, cita, listaElementos);
+								System.out.println("Factura generada con éxito.");
+								break;
+							}
+							
+						case 2 :
+							System.out.println("1. Buscar por Cliente :");
+							System.out.println("2. Buscar por ID factura: ");
+							System.out.println("3. Buscar por matricula: ");
+							System.out.println("4. Buscar por empleado:  ");
+							System.out.println("5. Buscar por partes:  ");
+							int tipo = sc.nextInt();
+							sc.nextLine();
+							System.out.println("Introduce el dato a buscar: ");
+							String criterio = sc.nextLine();
+
+							taller.buscarFacturas(criterio, tipo);
+							break;
+					} 
 					
-					switch(opcion2) {
-						case 1 : 
-						System.out.println("Ingrese el nombre del cliente");
-						String cliente = sc.nextLine();
-
-						case 2 : 
-						System.out.println("Ingrese el ID de la factura");
-						String id = sc.nextLine();
-
-						case 3 : 
-						System.out.println("Ingrese la matricula del coche");
-						String matricula = sc.nextLine();
-
-						case 4 : 
-						System.out.println("Ingrese el nombre del empleado");
-						String empleado = sc.toString();
-
-						case 5 : 
-						System.out.println("Ingrese el nombre de la refaccion");
-						String refaccion = sc.nextLine();
-
-					}
+				
+				
+					
 				}
-				
-				
 			}
-		} while (opcion != 6);
 
-	}
+		}while (opcion != 6);
+	}	
 }
+
 
 
 	

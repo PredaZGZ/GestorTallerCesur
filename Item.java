@@ -34,7 +34,7 @@ public class Item {
 	}
 
 	public ArrayList<Item> getListaElementos() {
-		return listaElementos;
+		return this.listaElementos;
 	}
 
 	public void setListaElementos(ArrayList<Item> listaElementos) {

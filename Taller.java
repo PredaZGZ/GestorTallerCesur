@@ -68,15 +68,25 @@ public class Taller {
 				case 4 : //por empleado
 				for (Item it : f.getListaElementos()) {
 					if (it instanceof Servicio s) {
-						if(f.getEmpleado().getNombre().equalsIgnoreCase(criterio)){
+						if(s.getEmpleado().getNombre().equalsIgnoreCase(criterio)){
 							System.out.println(f);
 							encontrado = true;
 						}
 					}
 				}
+				case 5 : //por repuesto
+				for (Item it : f.getListaElementos()) {
+					if (it instanceof Pieza p)
+						if(p.getNombrePieza().equalsIgnoreCase(criterio)){
+							System.out.println(f);
+							encontrado = true;
+						}
+				}
 			}
 		}
+		if(!encontrado); System.out.println("No se encontro ninguna factura ");
 	}
+
 	//añadir facturas
 	public void addFactura(int id, Cliente cliente, Cita cita, ArrayList<Item> listaElementos) {
 		Factura factura = new Factura(id, cliente, cita, listaElementos);
