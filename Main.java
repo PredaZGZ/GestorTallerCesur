@@ -167,7 +167,28 @@ public class Main {
 					int opcion2 = sc.nextInt();
 					sc.nextLine();
 					
-					switch(opcion2) {}
+					switch(opcion2) {
+						case 1 : 
+						System.out.println("Ingrese el nombre del cliente");
+						String cliente = sc.nextLine();
+
+						case 2 : 
+						System.out.println("Ingrese el ID de la factura");
+						String id = sc.nextLine();
+
+						case 3 : 
+						System.out.println("Ingrese la matricula del coche");
+						String matricula = sc.nextLine();
+
+						case 4 : 
+						System.out.println("Ingrese el nombre del empleado");
+						String empleado = sc.toString();
+
+						case 5 : 
+						System.out.println("Ingrese el nombre de la refaccion");
+						String refaccion = sc.nextLine();
+
+					}
 				}
 				
 				

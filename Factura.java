@@ -15,12 +15,18 @@ public class Factura {
 	
 	private ArrayList<Item> listaElementos;
 	
-		public Factura(int id, Cliente cliente , ArrayList<Item> listaElementos) {
+		public Factura(int id, Cliente cliente, Cita cita, ArrayList<Item> listaElementos) {
 			this.id = id;
 			this.cliente = cliente;
 			this.listaElementos = listaElementos;
+			this.cita = cita;
 			this.fecha = LocalDate.now();
 		}
+
+		public Cita getCita() { 
+			return cita;
+		}
+		
 		//calcula el precio de los items sim importar si es servicio, repuesto o item
 		public double calcularTotalFactura() {
 			double total = 0;

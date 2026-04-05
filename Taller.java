@@ -46,9 +46,40 @@ public class Taller {
 		return null;
 	}
 
+	public void buscarFacturas (String criterio, int tipo){
+		boolean encontrado = false;
+		for(Factura f : listaFacturas) {
+			switch(tipo) {
+				case 1 : //por cliente
+				if(f.getCliente().getNombre.equalsIgnoreCase(criterio)) {
+				System.out.println(f);
+				encontrado = true;
+				}
+				case 2 : //por id
+				if(String.valueOf(f.getId()).equalsIgnoreCase(criterio)){
+					System.out.println(f);
+					encontrado = true;
+				}
+				case 3 : //por matricula
+				if(f.getCita().getCoche().getMatricula().equalsIgnoreCase(criterio)) {
+					System.out.println(f);
+					encontrado = true;
+				}
+				case 4 : //por empleado
+				for (Item it : f.getListaElementos()) {
+					if (it instanceof Servicio s) {
+						if(f.getEmpleado().getNombre().equalsIgnoreCase(criterio)){
+							System.out.println(f);
+							encontrado = true;
+						}
+					}
+				}
+			}
+		}
+	}
 	//añadir facturas
-	public void addFactura(int id, ArrayList<Item> listaElementos) {
-		Factura factura = new Factura(id, listaElementos);
+	public void addFactura(int id, Cliente cliente, Cita cita, ArrayList<Item> listaElementos) {
+		Factura factura = new Factura(id, cliente, cita, listaElementos);
 		factura.crearDirectorioFacturas(); //metodo de crear un directorio que esta en facturas
 		factura.generarFactura(); //motodo de generar una factura y guardarla en el directiro que esdta en factura 
 		listaFacturas.add(factura);
