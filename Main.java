@@ -212,6 +212,23 @@ public class Main {
 
     }
 
+	private static void buscarCoche() {
+		try {
+			System.out.print("Introduce la matrícula del vehículo a buscar: ");
+			String matricula = sc.nextLine();
+
+			Coche coche = cocheGestor.buscarCoche(matricula);
+
+			if (coche != null) {
+				System.out.println("Vehículo encontrado:" + coche);
+			} else {
+				System.out.println("No se ha encontrado ningún vehículo con la matrícula: " + matricula);
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
     private static void modCliente() {
 
 		try {
