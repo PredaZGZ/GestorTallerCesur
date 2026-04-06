@@ -8,5 +8,14 @@ public class EmpleadoGestor {
 		Empleado nuevoEmpleado = new Empleado(nombre, puesto, sueldo, turno);
 		listaEmpleados.add(nuevoEmpleado);
 	}
-    
+
+    public Empleado buscarEmpleado(String nombre) {
+		for (Empleado empleado : listaEmpleados) {
+			if (empleado.getNombre().equalsIgnoreCase(nombre)) {
+				return empleado;
+			}
+		}
+		return null;
+	}
+
 }
