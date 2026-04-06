@@ -77,6 +77,17 @@ public class Main {
 			case 4 -> {
 				
 				menuVehiculos();
+				System.out.println("Selecciona una opcion:");
+				opcion = sc.nextInt();
+				sc.nextLine(); 
+
+				switch(opcion) {
+
+					case 1 -> buscarCoche();
+					case 2 -> addCoche();
+					case 3 -> modCoche();
+					
+				}
 				
 			}
 			
