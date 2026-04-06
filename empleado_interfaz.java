@@ -68,8 +68,15 @@ public class empleado_interfaz {
                             miTaller.addEmpleado(nuevoEmpleado);
                         }
                         case 3 -> {
-                            //Desglose lista de horarios
-                            //llamar metodo desglose horario
+                            System.out.println("Que empleado quieres desglosar el horario (indica el nombre)");
+                            String empleadoNombre = sc.nextLine();
+                            Empleado empleadoHorario = miTaller.buscarEmpleado(empleadoNombre);
+
+                            if (empleadoHorario != null) {
+                                miTaller.desgloseHorario(empleadoHorario);
+                            } else {
+                                System.out.println("Error: No se ha encontrado a ningun empleado con el nombre '" + empleadoNombre + "'.");
+                            }
                         }
                     }
     }

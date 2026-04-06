@@ -38,7 +38,9 @@ public class Empleado {
     public void setTurno(String turno) {
         this.turno = turno;
     }
-
+	public String getTurno() {
+        return turno;
+    }
 	public boolean isEstaDisponible() {
 		return estaDisponible;
 	}
