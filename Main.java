@@ -145,17 +145,20 @@ public class Main {
     }
 
     private static void buscarCliente() {
-		
-		System.out.print("Introduce el DNI del cliente: ");
-        String dni = sc.nextLine();
+		try {
+			System.out.print("Introduce el DNI del cliente: ");
+			String dni = sc.nextLine();
 
-        Cliente encontrado = clienteGestor.buscarCliente(dni);
+			Cliente encontrado = clienteGestor.buscarCliente(dni);
 
-        if (encontrado != null) {
-            System.out.println("Cliente encontrado: " + encontrado);
-        } else {
-            System.out.println("No existe ningún cliente con el DNI: " + dni);
-        }
+			if (encontrado != null) {
+				System.out.println("Cliente encontrado: " + encontrado);
+			} else {
+				System.out.println("No existe ningún cliente con el DNI: " + dni);
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
 
     }
 
