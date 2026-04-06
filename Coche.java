@@ -1,15 +1,23 @@
-package taller;
-
 public class Coche {
+
 	private Cliente cliente;
 	private String matricula;
 	private String modelo;
 	private String descripcionFallo;
 	
-	public Coche (String matricula, String modelo, String descripcionFallo) {
+	public Coche (Cliente cliente, String matricula, String modelo, String descripcionFallo) {
+		this.cliente = cliente;
 		this.matricula = matricula;
 		this.modelo = modelo;
 		this.descripcionFallo = descripcionFallo;
+	}
+
+	public Cliente cliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public String getMatricula() {
