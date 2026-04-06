@@ -7,15 +7,13 @@ public class Cliente_Interfaz{
         int opcionC;
         Scanner sc = new Scanner(System.in);
             System.out.println("---GESTION DE CLIENTES---");
-            System.out.println("1. Ver lista de clientes");
-            opcionC = sc.nextInt();
-            System.out.println("2. Agrega un cliente");
+            System.out.println("1. Agregar un cliente");
             opcionC = sc.nextInt();
             System.out.println("2. Buscar cliente por DNI");
             opcionC = sc.nextInt();
-            System.out.println("3. Eliminar cliente");
+            System.out.println("3. Listar clientes");
             opcionC = sc.nextInt();
-
+           
 
             switch (opcionC) {
                 
