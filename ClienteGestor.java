@@ -14,5 +14,16 @@ public class ClienteGestor {
 
     }
 
+    public Cliente buscarCliente(String dni) {
+        
+        for (Cliente cliente : listaClientes) {
+            if (cliente.getDni().equals(dni)) {
+                return cliente;
+            }
+        }
+        return null;
+        
+    }
+
 
 }
