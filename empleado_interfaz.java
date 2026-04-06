@@ -18,6 +18,7 @@ public class empleado_interfaz {
                         case 1 -> {
                             System.out.println("Que empleado quieres modificar (indica el nombre)");
                             String empleadoNombre = sc.nextLine();
+                            Empleado empleadoModificiar = miTaller.buscarEmpleado(empleadoNombre);
                             System.out.println("1. Modificar Nombre: ");
                             System.out.println("2. Modificar Puesto: ");
                             System.out.println("3. Modicar Sueldo: ");
@@ -27,6 +28,8 @@ public class empleado_interfaz {
                                 case 1 -> {
                                     System.out.println("Introduce nuevo nombre: ");
                                     String modNombre = sc.nextLine();
+                                    empleadoModificiar.setNombre(modNombre);
+                                    System.out.println("Nombre modificado con exito.");
                                 }
                                 case 2 -> {
                                     System.out.println("Introduce nuevo Puesto: ");

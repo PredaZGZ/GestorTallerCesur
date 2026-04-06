@@ -31,6 +31,13 @@ public class Empleado {
 	public void setPuesto(String puesto) {
 		this.puesto = puesto;
 	}
+	public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
 
 	public boolean isEstaDisponible() {
 		return estaDisponible;

@@ -12,9 +12,18 @@ public class Taller {
 	//-------------------------------------------------------------------------------------------
 
 	//------------------------- EMPLEADOS -------------------------------------
-	
+	//addEmpleado(añadir empleado)
 	public void addEmpleado(Empleado e) { 
     listaEmpleados.add(e);
+	}
+	//Buscar empleado
+	public Empleado buscarEmpleado(String nombreEmpleado) {
+    	for (Empleado e : listaEmpleados) {
+        	if (e.getNombre().equalsIgnoreCase(nombreEmpleado)) {
+        	    return e;
+        	}
+    	}
+		return null;
 	}
 
 	//------------------------------------------------------------------------
