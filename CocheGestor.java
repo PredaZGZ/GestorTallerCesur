@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class CocheGestor {
 
-    ArrayList<Coche> listaCoches = new ArrayList<>();
+    ArrayList<Coche> listaCoches = Persistencia.cargarCoches();
 
     public void addCoche(Cliente cliente, String matricula, String modelo, String descripcionFallo) {
 		
@@ -14,7 +14,8 @@ public class CocheGestor {
 
 		Coche coche = new Coche(cliente, matricula,modelo,descripcionFallo);
 		listaCoches.add(coche);
-
+		
+		Persistencia.guardarCoches(listaCoches);
 	}
 
 	public Coche buscarCoche(String matricula) {
