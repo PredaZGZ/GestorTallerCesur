@@ -4,6 +4,7 @@ public class Main {
 	
 	private static CitasGestor gestorCitas = new CitasGestor();
 	private static ClienteGestor clienteGestor = new ClienteGestor();
+	private static EmpleadoGestor empleadoGestor = new EmpleadoGestor();
 
 	private static Scanner sc = new Scanner(System.in);
 	
@@ -91,12 +92,12 @@ public class Main {
 	}
 
 	private static void menuEmpleados() {
-   
-        System.out.println("Modificar empleado");
-        System.out.println("Contratar empleado: ");
-        System.out.println("Ver horario de un empleado");      
 
-    }
+		System.out.println("1. Contratar empleado");
+		System.out.println("2. Ver horario de un empleado");      
+		System.out.println("3. Modificar empleado");
+		
+	}
 
 	private static void menuClientes() {
    
