@@ -4,6 +4,7 @@ public class Main {
 	
 	private static CitasGestor gestorCitas = new CitasGestor();
 	private static ClienteGestor clienteGestor = new ClienteGestor();
+	private static EmpleadoGestor empleadoGestor = new EmpleadoGestor();
 
 	private static Scanner sc = new Scanner(System.in);
 	
@@ -44,7 +45,15 @@ public class Main {
 			case 2 -> {
 
 				menuEmpleados(); 
+				System.out.println("Selecciona una opcion:");
+                opcion = sc.nextInt();
+                sc.nextLine();
 
+                switch(opcion) {
+                    case 1 -> addEmpleado();
+                    case 2 -> verHorarioEmpleado();
+                    case 3 -> modEmpleado();
+                }
 			}
 
 			case 3 -> {
@@ -91,12 +100,12 @@ public class Main {
 	}
 
 	private static void menuEmpleados() {
-   
-        System.out.println("Modificar empleado");
-        System.out.println("Contratar empleado: ");
-        System.out.println("Ver horario de un empleado");      
 
-    }
+		System.out.println("1. Contratar empleado");
+		System.out.println("2. Ver horario de un empleado");      
+		System.out.println("3. Modificar empleado");
+
+	}
 
 	private static void menuClientes() {
    
@@ -193,6 +202,72 @@ public class Main {
 	private static void precargarDatos() {
     	clienteGestor.altaCliente("Pepe", "Pérez", "12345678A");
     	clienteGestor.altaCliente("Ana", "García", "87654321B");
+    }
+
+	private static void addEmpleado() {
+		try {
+			System.out.print("Introduce Nombre: ");
+			String nombre = sc.nextLine();
+			
+			System.out.print("Introduce Puesto: ");
+			String puesto = sc.nextLine();
+			
+			System.out.print("Introduce Sueldo: ");
+			double sueldo = sc.nextDouble();
+			sc.nextLine(); 
+			
+			System.out.print("Introduce Turno (Mañana/Tarde/Noche): ");
+			String turno = sc.nextLine();
+
+			empleadoGestor.contratarEmpleado(nombre, puesto, sueldo, turno);
+			System.out.println("Empleado contratado correctamente.");
+			
+		} catch (Exception e) {
+			System.out.println("Error al introducir los datos: " + e.getMessage());
+			sc.nextLine(); 
+		}
+	}
+
+	private static void verHorarioEmpleado() {
+        System.out.print("Introduce el nombre del empleado: ");
+        String nombre = sc.nextLine();
+        Empleado encontrado = empleadoGestor.buscarEmpleado(nombre);
+        
+        if (encontrado != null) {
+            System.out.println("El turno de " + nombre + " es: " + encontrado.getTurno());
+        } else {
+            System.out.println("No se encontró ningún empleado con ese nombre.");
+        }
+    }
+
+	private static void modEmpleado() {
+        try {
+            System.out.print("Introduce el nombre del empleado a modificar: ");
+            String nombre = sc.nextLine();
+            Empleado empleado = empleadoGestor.buscarEmpleado(nombre);
+
+            if (empleado != null) {
+                System.out.println("Empleado encontrado: " + empleado);
+                
+                System.out.print("Nuevo puesto: ");
+                String nuevoPuesto = sc.nextLine();
+                
+                System.out.print("Nuevo sueldo: ");
+                double nuevoSueldo = sc.nextDouble();
+                sc.nextLine();
+                
+                System.out.print("Nuevo turno: ");
+                String nuevoTurno = sc.nextLine();
+
+                empleadoGestor.modificarEmpleado(nombre, nuevoPuesto, nuevoSueldo, nuevoTurno);
+                System.out.println("Empleado actualizado con éxito.");
+            } else {
+                System.out.println("No se encontró al empleado.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al modificar: " + e.getMessage());
+            sc.nextLine(); 
+        }
     }
 
 }
