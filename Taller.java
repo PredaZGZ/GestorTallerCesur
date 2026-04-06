@@ -67,7 +67,7 @@ public class Taller {
 				
 			}
 		}
-		Coche coche = new Coche(matricula,modelo,descripcionFallo);
+		public Coche coche = new Coche(matricula,modelo,descripcionFallo);
 			
 		listaCoches.add(coche);
 	//------------------------------------------------------------------------
@@ -91,6 +91,25 @@ public class Taller {
 
 	//-------------------------- CLIENTES ----------------------------------------
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
+
+	public void addCliente(String nombre, String apellido, String dni, String telefono){
+		Cliente nuevo = new Cliente(nombre, apellido, dni, telefono);
+		listaClientes.add(nuevo);
+		System.out.println("Cliente guardado correctamente en el sistema. ");
+	}
+
+	public Cliente BuscarCliente(String dni){
+		for (Cliente c : listaClientes) {
+			if(c.getDni().equalsIgnoreCase(dni)) 
+			return c;
+		}
+		return null;
+	}
+
+	public void listarClientes(){
+		for (Cliente c : listaClientes)
+		System.out.println(c);
+	}
 
 
 

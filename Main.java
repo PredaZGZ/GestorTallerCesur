@@ -5,6 +5,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		empleado_interfaz miEmpleado = new empleado_interfaz();
+		Taller miTaller = new Taller();
+		Cliente_Interfaz miCliente = miTaller;
 	
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Selecciona una opcion:");
