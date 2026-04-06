@@ -36,6 +36,22 @@ public class Empleado {
 	public void cambiarEstado() {
 		this.estaDisponible = !this.estaDisponible;
 	}
+
+	public double getSueldo() {
+		return sueldo;
+	}
+
+	public void setSueldo(double sueldo) {
+		this.sueldo = sueldo;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
 	
 	@Override
 	public String toString() {
