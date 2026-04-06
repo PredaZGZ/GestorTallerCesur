@@ -6,10 +6,13 @@ public class empleado_interfaz {
 
     public void empleados(){
         int opcionE;
+        
         Scanner sc = new Scanner(System.in);
+        do {
         System.out.println("1. Modificar empleado: ");
         System.out.println("2. Contratar empleado: ");
-        System.out.println("3. Ver horario de un empleado");                
+        System.out.println("3. Ver horario de un empleado");     
+        System.out.println("4. Ver todos los empleados contratados");           
         opcionE = sc.nextInt();
 
         sc.nextLine(); 
@@ -89,6 +92,10 @@ public class empleado_interfaz {
                     System.out.println("Error: No se ha encontrado a ningun empleado con el nombre '" + empleadoNombre + "'.");
                 }
             }
+            case 4 -> {
+                miTaller.listarEmpleados();
+            }
         }
+     } while (opcionE != 0);
     }
 }

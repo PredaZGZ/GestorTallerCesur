@@ -48,6 +48,12 @@ public class Taller {
         System.out.println("Puesto: " + e.getPuesto());
         System.out.println("Turno asignado: " + e.getTurno()); 
     }
+	//Listar empleados
+	public void listarEmpleados(){
+		for (Empleado e : listaEmpleados) {
+					System.out.println(e.toString());
+				}
+	}
 
 	//------------------------------------------------------------------------
 
