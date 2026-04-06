@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class empleado_interfaz {
+
+    Taller miTaller = new Taller();
+
     public void empleados(){
         int opcionE;
         Scanner sc = new Scanner(System.in);
@@ -47,10 +50,13 @@ public class empleado_interfaz {
                             System.out.println("Puesto: ");
                             String puesto = sc.nextLine();
                             System.out.println("Sueldo: ");
-                            int Sueldo = sc.nextInt();
+                            double Sueldo = sc.nextInt();
                             System.out.println("Turno: ");
                             String turno = sc.nextLine();
-                            //Llamar metodo de taller/addEmpleado
+                            //Creamos constructor de Empleado 
+                            Empleado nuevoEmpleado = new Empleado(nombre, puesto, Sueldo, turno, dni);
+                            //Llamamos a taller addEmpleado para añadirlo en la lista
+                            miTaller.addEmpleado(nuevoEmpleado);
                         }
                         case 3 -> {
                             //Desglose lista de horarios

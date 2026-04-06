@@ -1,16 +1,26 @@
 import java.util.ArrayList;
 public class Taller {
 	
-	//------------------------- EMPLEADOS -------------------------------------
+	//-------------------- AQUI VAN TODAS LAS LISTAS Q SE USAN --------------------------------
 	ArrayList<Empleado> listaEmpleados = new ArrayList<>();
+    ArrayList<Coche> listaCoches = new ArrayList<>();
+    ArrayList<Factura> listaFacturas = new ArrayList<>();
+    ArrayList<Cita> listaCitas = new ArrayList<>();
+    ArrayList<Cliente> listaClientes = new ArrayList<>();
 
 
+	//-------------------------------------------------------------------------------------------
+
+	//------------------------- EMPLEADOS -------------------------------------
+	
+	public void addEmpleado(Empleado e) { 
+    listaEmpleados.add(e);
+	}
 
 	//------------------------------------------------------------------------
 
 
 	//-------------------------- COCHES -------------------------------------
-	ArrayList<Coche> listaCoches = new ArrayList<>();
 	
 	public void addCoche(String matricula, String modelo, String descripcionFallo) {
 		for (Coche c : listaCoches) {
@@ -45,7 +55,7 @@ public class Taller {
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
 
 
-	
+
 	//------------------------------------------------------------------------
 
 
