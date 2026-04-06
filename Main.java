@@ -9,6 +9,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		precargarDatos();
 	
 		System.out.println("Selecciona una opcion:");
 		//System.out.println("Create, Read, Update, Delete");
@@ -149,6 +150,11 @@ public class Main {
 
     private static void modCliente() {
        
+    }
+
+	private static void precargarDatos() {
+    	clienteGestor.altaCliente("Pepe", "Pérez", "12345678A");
+    	clienteGestor.altaCliente("Ana", "García", "87654321B");
     }
 
 }
