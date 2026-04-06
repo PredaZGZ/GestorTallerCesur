@@ -206,7 +206,7 @@ public class Main {
 			
 			System.out.print("Introduce Sueldo: ");
 			double sueldo = sc.nextDouble();
-			sc.nextLine(); // Esto limpia el "intro" fantasma del teclado
+			sc.nextLine(); 
 			
 			System.out.print("Introduce Turno (Mañana/Tarde/Noche): ");
 			String turno = sc.nextLine();
@@ -216,7 +216,7 @@ public class Main {
 			
 		} catch (Exception e) {
 			System.out.println("Error al introducir los datos: " + e.getMessage());
-			sc.nextLine(); // Limpia por si han metido letras en el sueldo sin querer
+			sc.nextLine(); 
 		}
 	}
 
@@ -229,6 +229,36 @@ public class Main {
             System.out.println("El turno de " + nombre + " es: " + encontrado.getTurno());
         } else {
             System.out.println("No se encontró ningún empleado con ese nombre.");
+        }
+    }
+
+	private static void modEmpleado() {
+        try {
+            System.out.print("Introduce el nombre del empleado a modificar: ");
+            String nombre = sc.nextLine();
+            Empleado empleado = empleadoGestor.buscarEmpleado(nombre);
+
+            if (empleado != null) {
+                System.out.println("Empleado encontrado: " + empleado);
+                
+                System.out.print("Nuevo puesto: ");
+                String nuevoPuesto = sc.nextLine();
+                
+                System.out.print("Nuevo sueldo: ");
+                double nuevoSueldo = sc.nextDouble();
+                sc.nextLine();
+                
+                System.out.print("Nuevo turno: ");
+                String nuevoTurno = sc.nextLine();
+
+                empleadoGestor.modificarEmpleado(nombre, nuevoPuesto, nuevoSueldo, nuevoTurno);
+                System.out.println("Empleado actualizado con éxito.");
+            } else {
+                System.out.println("No se encontró al empleado.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al modificar: " + e.getMessage());
+            sc.nextLine(); 
         }
     }
 
