@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> f465682ac4ff706a00927eb8649625171ac964a2
 import java.util.ArrayList;
 public class Taller {
 	
@@ -47,6 +43,25 @@ public class Taller {
 
 	//-------------------------- CLIENTES ----------------------------------------
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
+
+	public void addCliente(String nombre, String apellido, String dni, String telefono){
+		Cliente nuevo = new Cliente(nombre, apellido, dni, telefono);
+		listaClientes.add(nuevo);
+		System.out.println("Cliente guardado correctamente en el sistema. ");
+	}
+
+	public Cliente BuscarCliente(String dni){
+		for (Cliente c : listaClientes) {
+			if(c.getDni().equalsIgnoreCase(dni)) 
+			return c;
+		}
+		return null;
+	}
+
+	public void listarClientes(){
+		for (Cliente c : listaClientes)
+		System.out.println(c);
+	}
 
 
 	
