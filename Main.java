@@ -257,6 +257,30 @@ public class Main {
 		}
     }
 
+	private static void modCoche() {
+		try {
+			System.out.print("Introduce la matrícula del vehículo a modificar: ");
+			String matricula = sc.nextLine();
+
+			Coche coche = cocheGestor.buscarCoche(matricula);
+
+			if (coche != null) {
+				System.out.println("Vehículo encontrado: " + coche);
+		
+				System.out.print("Nueva descripción del fallo: ");
+				String fallo = sc.nextLine();
+
+				cocheGestor.modificarCoche(matricula, fallo);
+				System.out.println("Información del vehículo actualizada.");
+				
+			} else {
+				System.out.println("No se puede modificar debido a que la matrícula no se ha encontrado.");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
 	private static void precargarDatos() {
     	clienteGestor.altaCliente("Pepe", "Pérez", "12345678A");
     	clienteGestor.altaCliente("Ana", "García", "87654321B");
