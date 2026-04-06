@@ -220,4 +220,16 @@ public class Main {
 		}
 	}
 
+	private static void verHorarioEmpleado() {
+        System.out.print("Introduce el nombre del empleado: ");
+        String nombre = sc.nextLine();
+        Empleado encontrado = empleadoGestor.buscarEmpleado(nombre);
+        
+        if (encontrado != null) {
+            System.out.println("El turno de " + nombre + " es: " + encontrado.getTurno());
+        } else {
+            System.out.println("No se encontró ningún empleado con ese nombre.");
+        }
+    }
+
 }
