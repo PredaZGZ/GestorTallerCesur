@@ -8,11 +8,11 @@ public class empleado_interfaz {
         int opcionE;
         Scanner sc = new Scanner(System.in);
                     System.out.println("1. Modificar empleado: ");
-                    opcionE = sc.nextInt();
                     System.out.println("2. Contratar empleado: ");
-                    opcionE = sc.nextInt();
                     System.out.println("3. Ver horario de un empleado");				
                     opcionE = sc.nextInt();
+
+                    sc.nextLine();
     
                     switch(opcionE){
                         case 1 -> {
