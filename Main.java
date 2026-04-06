@@ -167,18 +167,28 @@ public class Main {
 
 	private static void addCoche() {
 		try {
-			System.out.print("Introduce la matrícula: ");
-			String matricula = sc.nextLine();
-			
-			System.out.print("Introduce el modelo: ");
-			String modelo = sc.nextLine();
-			
-			System.out.print("Descripción del fallo: ");
-			String fallo = sc.nextLine();
 
-			cocheGestor.addCoche(matricula, modelo, fallo);
-			System.out.println("Vehículo registrado correctamente.");
-		
+			System.out.print("Introduce el DNI del dueño del vehículo: ");
+        	String dniCliente = sc.nextLine();
+        
+        	Cliente cliente = clienteGestor.buscarCliente(dniCliente);
+
+			if (cliente != null) {
+				System.out.print("Introduce la matrícula: ");
+				String matricula = sc.nextLine();
+				
+				System.out.print("Introduce el modelo: ");
+				String modelo = sc.nextLine();
+				
+				System.out.print("Descripción del fallo: ");
+				String fallo = sc.nextLine();
+
+				cocheGestor.addCoche(cliente, matricula, modelo, fallo);
+				System.out.println("Vehículo registrado correctamente.");
+			} else {
+            System.out.println("Error: No existe un cliente con el DNI " + dniCliente);
+			}
+
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
