@@ -5,6 +5,7 @@ public class Main {
 	private static CitasGestor gestorCitas = new CitasGestor();
 	private static ClienteGestor clienteGestor = new ClienteGestor();
 	private static EmpleadoGestor empleadoGestor = new EmpleadoGestor();
+	private static CocheGestor cocheGestor = new CocheGestor();
 
 	private static Scanner sc = new Scanner(System.in);
 	
@@ -76,6 +77,17 @@ public class Main {
 			case 4 -> {
 				
 				menuVehiculos();
+				System.out.println("Selecciona una opcion:");
+				opcion = sc.nextInt();
+				sc.nextLine(); 
+
+				switch(opcion) {
+
+					case 1 -> buscarCoche();
+					case 2 -> addCoche();
+					case 3 -> modCoche();
+
+				}
 				
 			}
 			
@@ -153,6 +165,35 @@ public class Main {
         }
     }
 
+	private static void addCoche() {
+		try {
+
+			System.out.print("Introduce el DNI del dueño del vehículo: ");
+        	String dniCliente = sc.nextLine();
+        
+        	Cliente cliente = clienteGestor.buscarCliente(dniCliente);
+
+			if (cliente != null) {
+				System.out.print("Introduce la matrícula: ");
+				String matricula = sc.nextLine();
+				
+				System.out.print("Introduce el modelo: ");
+				String modelo = sc.nextLine();
+				
+				System.out.print("Descripción del fallo: ");
+				String fallo = sc.nextLine();
+
+				cocheGestor.addCoche(cliente, matricula, modelo, fallo);
+				System.out.println("Vehículo registrado correctamente.");
+			} else {
+            System.out.println("Error: No existe un cliente con el DNI " + dniCliente);
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
     private static void buscarCliente() {
 		try {
 			System.out.print("Introduce el DNI del cliente: ");
@@ -170,6 +211,23 @@ public class Main {
 		}
 
     }
+
+	private static void buscarCoche() {
+		try {
+			System.out.print("Introduce la matrícula del vehículo a buscar: ");
+			String matricula = sc.nextLine();
+
+			Coche coche = cocheGestor.buscarCoche(matricula);
+
+			if (coche != null) {
+				System.out.println("Vehículo encontrado:" + coche);
+			} else {
+				System.out.println("No se ha encontrado ningún vehículo con la matrícula: " + matricula);
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
 
     private static void modCliente() {
 
@@ -198,6 +256,30 @@ public class Main {
 			System.out.println("Error: " + e.getMessage());
 		}
     }
+
+	private static void modCoche() {
+		try {
+			System.out.print("Introduce la matrícula del vehículo a modificar: ");
+			String matricula = sc.nextLine();
+
+			Coche coche = cocheGestor.buscarCoche(matricula);
+
+			if (coche != null) {
+				System.out.println("Vehículo encontrado: " + coche);
+		
+				System.out.print("Nueva descripción del fallo: ");
+				String fallo = sc.nextLine();
+
+				cocheGestor.modificarCoche(matricula, fallo);
+				System.out.println("Información del vehículo actualizada.");
+				
+			} else {
+				System.out.println("No se puede modificar debido a que la matrícula no se ha encontrado.");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
 
 	private static void precargarDatos() {
     	clienteGestor.altaCliente("Pepe", "Pérez", "12345678A");
