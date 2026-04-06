@@ -34,14 +34,20 @@ public class empleado_interfaz {
                                 case 2 -> {
                                     System.out.println("Introduce nuevo Puesto: ");
                                     String modPuesto = sc.nextLine();
+                                    empleadoModificiar.setNombre(modPuesto);
+                                    System.out.println("Puesto modificado a la perfección,");
                                 }
                                 case 3 -> {
                                     System.out.println("Introduce nuevo sueldo: ");
                                     int modSueldo = sc.nextInt();
+                                    empleadoModificiar.setSueldo(modSueldo);
+                                    System.out.println("Sueldo modificado a la primera.");
                                 }
                                 case 4 -> {
                                     System.out.println("Introduce nuevo turno: ");
                                     String modTurno = sc.nextLine();
+                                    empleadoModificiar.setTurno(modTurno);
+                                    System.out.println("Truno modificado expectacularmemte.");
                                 }
                             }
                         }
