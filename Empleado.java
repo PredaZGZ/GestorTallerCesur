@@ -1,16 +1,15 @@
-package Taller;
-
 public class Empleado {
 	private String nombre;
 	private String puesto;
 	private double sueldo;
-	private String turno; //Falta el contructor (arreglar) 
+	private String turno;
 	private boolean estaDisponible;
 	
-	public Empleado(String nombre, String puesto, double sueldo) {
+	public Empleado(String nombre, String puesto, double sueldo, String turno) {
 		this.nombre = nombre;
 		this.puesto = puesto;
 		this.sueldo = sueldo;
+		this.turno = turno;
 		this.estaDisponible = true;
 	}
 
@@ -37,10 +36,26 @@ public class Empleado {
 	public void cambiarEstado() {
 		this.estaDisponible = !this.estaDisponible;
 	}
+
+	public double getSueldo() {
+		return sueldo;
+	}
+
+	public void setSueldo(double sueldo) {
+		this.sueldo = sueldo;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
 	
 	@Override
 	public String toString() {
-		return "Nombre: " + this.nombre + " Puesto: " + this.puesto;
+		return "Empleado [Nombre=" + nombre + ", Puesto=" + puesto + ", Sueldo=" + sueldo + "€, Turno=" + turno + ", Disponible=" + estaDisponible + "]";
 	}
 	
 	

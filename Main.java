@@ -1,13 +1,17 @@
-package Taller;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
-	
+		 
+	private static CitasGestor gestorCitas = new CitasGestor();
+	private static ClienteGestor clienteGestor = new ClienteGestor();
+	private static EmpleadoGestor empleadoGestor = new EmpleadoGestor();
+	private static CocheGestor cocheGestor = new CocheGestor();
+
+	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		precargarDatos();
 	
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Selecciona una opcion:");
 		//System.out.println("Create, Read, Update, Delete");
 		System.out.println("1. Citas: ");
@@ -21,44 +25,330 @@ public class Main {
 		switch(opcion) {
 		
 			case 1 -> {
-				//System.out.println("Listar citas de hoy");
-				System.out.println("Ver futuras citas");
-				System.out.println("Agendar cita: ");
-				System.out.println("Cancelar cita: ");
-				System.out.println("Modificar cita: ");		
-				
-				switch 
+
+				menuCitas();
+
+				System.out.println("Selecciona una opcion:");
+				opcion = sc.nextInt();
+
+				switch(opcion) {
+
+					case 1 -> CitasGestor.listarCitasHoy();
+					case 2 -> CitasGestor.listarFuturasCitas();
+					case 3 -> CitasGestor.AgendarCitas();
+					case 4 -> CitasGestor.CancelarCitas();
+					case 5 -> CitasGestor.ModificarCitas();
+				}
+			
 			}
 			
 			case 2 -> {
-				System.out.println("Modificar empleado");
-				System.out.println("Contratar empleado: ");
-				System.out.println("Ver horario de un empleado");				
-				
+
+				menuEmpleados(); 
+				System.out.println("Selecciona una opcion:");
+                opcion = sc.nextInt();
+                sc.nextLine();
+
+                switch(opcion) {
+                    case 1 -> addEmpleado();
+                    case 2 -> verHorarioEmpleado();
+                    case 3 -> modEmpleado();
+                }
 			}
+
 			case 3 -> {
-				//System.out.println("");
-				System.out.println("Buscar: "); //Opcion de modificar despues.
-				System.out.println("Añadir cliente: ");
+				
+				menuClientes();
+				System.out.println("Selecciona una opcion:");
+				opcion = sc.nextInt();
+				sc.nextLine(); 
+
+				switch(opcion) {
+
+					case 1 -> buscarCliente();
+                    case 2 -> addCliente();
+                    case 3 -> modCliente();
+					
+				}
 				
 			}
+
 			case 4 -> {
-				//System.out.println("");
-				System.out.println("Buscar: "); 
-				System.out.println("Añadir Vehiculo: ");
 				
-			}
-			case 5 -> {
-				//System.out.println("");
-				System.out.println("Buscar por Cliente :");
-				System.out.println("Buscar por ID factura: ");
-				System.out.println("Buscar por matricula: ");
-				System.out.println("Buscar por empleado:  ");
-				System.out.println("Buscar por partes:  ");
+				menuVehiculos();
+				System.out.println("Selecciona una opcion:");
+				opcion = sc.nextInt();
+				sc.nextLine(); 
+
+				switch(opcion) {
+
+					case 1 -> buscarCoche();
+					case 2 -> addCoche();
+					case 3 -> modCoche();
+
+				}
+				
 			}
 			
+			case 5 -> {
+
+				menuFacturas();
+
+			}
 			
 		}
 
 	}
+
+	private static void menuCitas() {
+	
+		System.out.println("1. Listar citas de hoy");
+		System.out.println("2. Ver futuras citas");
+		System.out.println("3. Agendar cita: ");
+		System.out.println("4. Cancelar cita: ");
+		System.out.println("5. Modificar cita: ");
+
+	}
+
+	private static void menuEmpleados() {
+
+		System.out.println("1. Contratar empleado");
+		System.out.println("2. Ver horario de un empleado");      
+		System.out.println("3. Modificar empleado");
+
+	}
+
+	private static void menuClientes() {
+   
+        System.out.println("Buscar cliente: ");
+        System.out.println("Añadir cliente: ");
+        System.out.println("Modificar información del cliente: ");      
+
+    }
+
+	private static void menuVehiculos() {
+   
+        System.out.println("Buscar vehiculo: ");
+        System.out.println("Añadir Vehiculo: ");
+        System.out.println("Modificar información del Vehiculo: ");
+
+    }
+
+	private static void menuFacturas() {
+   
+        System.out.println("Buscar por Cliente :");
+        System.out.println("Buscar por ID factura: ");
+        System.out.println("Buscar por matricula: ");
+        System.out.println("Buscar por empleado:  ");
+        System.out.println("Buscar por partes:  ");
+
+    }
+
+	private static void addCliente() {
+		try {
+
+			System.out.print("Introduce DNI: ");
+			String dni = sc.nextLine();
+
+			System.out.print("Introduce Nombre: ");
+			String nombre = sc.nextLine();
+
+			System.out.print("Introduce Apellido: ");
+			String apellido = sc.nextLine();
+
+			clienteGestor.altaCliente(dni, nombre, apellido);
+			System.out.println("Cliente dado de alta correctamente.");
+
+		} catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+	private static void addCoche() {
+		try {
+
+			System.out.print("Introduce el DNI del dueño del vehículo: ");
+        	String dniCliente = sc.nextLine();
+        
+        	Cliente cliente = clienteGestor.buscarCliente(dniCliente);
+
+			if (cliente != null) {
+				System.out.print("Introduce la matrícula: ");
+				String matricula = sc.nextLine();
+				
+				System.out.print("Introduce el modelo: ");
+				String modelo = sc.nextLine();
+				
+				System.out.print("Descripción del fallo: ");
+				String fallo = sc.nextLine();
+
+				cocheGestor.addCoche(cliente, matricula, modelo, fallo);
+				System.out.println("Vehículo registrado correctamente.");
+			} else {
+            System.out.println("Error: No existe un cliente con el DNI " + dniCliente);
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
+    private static void buscarCliente() {
+		try {
+			System.out.print("Introduce el DNI del cliente: ");
+			String dni = sc.nextLine();
+
+			Cliente encontrado = clienteGestor.buscarCliente(dni);
+
+			if (encontrado != null) {
+				System.out.println("Cliente encontrado: " + encontrado);
+			} else {
+				System.out.println("No existe ningún cliente con el DNI: " + dni);
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+
+    }
+
+	private static void buscarCoche() {
+		try {
+			System.out.print("Introduce la matrícula del vehículo a buscar: ");
+			String matricula = sc.nextLine();
+
+			Coche coche = cocheGestor.buscarCoche(matricula);
+
+			if (coche != null) {
+				System.out.println("Vehículo encontrado:" + coche);
+			} else {
+				System.out.println("No se ha encontrado ningún vehículo con la matrícula: " + matricula);
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
+    private static void modCliente() {
+
+		try {
+			System.out.print("Introduce el DNI del cliente a modificar: ");
+			String dni = sc.nextLine();
+
+			Cliente cliente = clienteGestor.buscarCliente(dni);
+
+			if (cliente != null) {
+				System.out.println("Cliente encontrado: " + cliente);
+				
+				System.out.print("Nuevo nombre: ");
+				String nuevoNombre = sc.nextLine();
+				
+				System.out.print("Nuevo apellido: ");
+				String nuevoApellido = sc.nextLine();
+
+				clienteGestor.modificarCliente(dni, nuevoNombre, nuevoApellido);
+				System.out.println("Cliente actualizado con éxito.");
+
+			} else {
+				System.out.println("No se puede modificar debido a que el DNI no se ha encontrado.");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+    }
+
+	private static void modCoche() {
+		try {
+			System.out.print("Introduce la matrícula del vehículo a modificar: ");
+			String matricula = sc.nextLine();
+
+			Coche coche = cocheGestor.buscarCoche(matricula);
+
+			if (coche != null) {
+				System.out.println("Vehículo encontrado: " + coche);
+		
+				System.out.print("Nueva descripción del fallo: ");
+				String fallo = sc.nextLine();
+
+				cocheGestor.modificarCoche(matricula, fallo);
+				System.out.println("Información del vehículo actualizada.");
+				
+			} else {
+				System.out.println("No se puede modificar debido a que la matrícula no se ha encontrado.");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
+	private static void precargarDatos() {
+    	clienteGestor.altaCliente("Pepe", "Pérez", "12345678A");
+    	clienteGestor.altaCliente("Ana", "García", "87654321B");
+    }
+
+	private static void addEmpleado() {
+		try {
+			System.out.print("Introduce Nombre: ");
+			String nombre = sc.nextLine();
+			
+			System.out.print("Introduce Puesto: ");
+			String puesto = sc.nextLine();
+			
+			System.out.print("Introduce Sueldo: ");
+			double sueldo = sc.nextDouble();
+			sc.nextLine(); 
+			
+			System.out.print("Introduce Turno (Mañana/Tarde/Noche): ");
+			String turno = sc.nextLine();
+
+			empleadoGestor.contratarEmpleado(nombre, puesto, sueldo, turno);
+			System.out.println("Empleado contratado correctamente.");
+			
+		} catch (Exception e) {
+			System.out.println("Error al introducir los datos: " + e.getMessage());
+			sc.nextLine(); 
+		}
+	}
+
+	private static void verHorarioEmpleado() {
+        System.out.print("Introduce el nombre del empleado: ");
+        String nombre = sc.nextLine();
+        Empleado encontrado = empleadoGestor.buscarEmpleado(nombre);
+        
+        if (encontrado != null) {
+            System.out.println("El turno de " + nombre + " es: " + encontrado.getTurno());
+        } else {
+            System.out.println("No se encontró ningún empleado con ese nombre.");
+        }
+    }
+
+	private static void modEmpleado() {
+        try {
+            System.out.print("Introduce el nombre del empleado a modificar: ");
+            String nombre = sc.nextLine();
+            Empleado empleado = empleadoGestor.buscarEmpleado(nombre);
+
+            if (empleado != null) {
+                System.out.println("Empleado encontrado: " + empleado);
+                
+                System.out.print("Nuevo puesto: ");
+                String nuevoPuesto = sc.nextLine();
+                
+                System.out.print("Nuevo sueldo: ");
+                double nuevoSueldo = sc.nextDouble();
+                sc.nextLine();
+                
+                System.out.print("Nuevo turno: ");
+                String nuevoTurno = sc.nextLine();
+
+                empleadoGestor.modificarEmpleado(nombre, nuevoPuesto, nuevoSueldo, nuevoTurno);
+                System.out.println("Empleado actualizado con éxito.");
+            } else {
+                System.out.println("No se encontró al empleado.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al modificar: " + e.getMessage());
+            sc.nextLine(); 
+        }
+    }
+
 }
