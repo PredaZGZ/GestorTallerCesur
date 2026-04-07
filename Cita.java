@@ -1,5 +1,3 @@
-package Taller;
-
 public class Cita {
 	private String fecha;
 	private String hora;
