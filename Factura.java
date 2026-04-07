@@ -23,7 +23,6 @@ public class Factura {
         this.listaElementos.remove(item);
     }
 
-
     public Double calcularTotal() {
         Double total = 0.0;
         for (Item item : listaElementos) {
