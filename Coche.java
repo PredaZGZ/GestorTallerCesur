@@ -1,4 +1,3 @@
-package Taller;
 
 public class Coche {
 	private Cliente cliente;
@@ -6,10 +5,11 @@ public class Coche {
 	private String modelo;
 	private String descripcionFallo;
 	
-	public Coche (String matricula, String modelo, String descripcionFallo) {
+	public Coche (String matricula, String modelo, String descripcionFallo, Cliente cliente) {
 		this.matricula = matricula;
 		this.modelo = modelo;
 		this.descripcionFallo = descripcionFallo;
+		this.cliente = cliente;
 	}
 
 	public String getMatricula() {
@@ -35,10 +35,18 @@ public class Coche {
 	public void setDescripcionFallo(String descripcionFallo) {
 		this.descripcionFallo = descripcionFallo;
 	}
+
+	public Cliente getCliente(){
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente){
+		this.Cliente = cliente;
+	}
 	
 	@Override
 	public String toString() {
-		return "Modelo: " + this.modelo + "Matricula: " + this.matricula + "Fallo: " + this.descripcionFallo;
+		return "Modelo: " + this.modelo + "Matricula: " + this.matricula + "Propetario:" + cliente.getNombre + cliente.getApellido +  "Fallo: " + this.descripcionFallo ;
 	}
 	
 	

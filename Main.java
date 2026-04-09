@@ -1,11 +1,12 @@
-package Taller;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		empleado_interfaz miEmpleado = new empleado_interfaz();
+		Taller miTaller = new Taller();
+		Cliente_Interfaz miCliente = miTaller;
 	
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Selecciona una opcion:");
@@ -27,14 +28,9 @@ public class Main {
 				System.out.println("Cancelar cita: ");
 				System.out.println("Modificar cita: ");		
 				
-				switch 
 			}
-			
 			case 2 -> {
-				System.out.println("Modificar empleado");
-				System.out.println("Contratar empleado: ");
-				System.out.println("Ver horario de un empleado");				
-				
+				miEmpleado.empleados();
 			}
 			case 3 -> {
 				//System.out.println("");
